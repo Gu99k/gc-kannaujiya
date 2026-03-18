@@ -1,5 +1,5 @@
-// const basePath = "/"; // Adjust if hosted under a subpath, e.g., "/gc-myportfolio.in/"
-const basePath = "/gc-myportfolio.in/";
+const basePath = "/"; // Adjust if hosted under a subpath, e.g., "/gc-myportfolio.in/"
+// const basePath = "/gc-myportfolio.in/";
 
 // Select DOM elements
 const homeLinks = document.querySelectorAll(".home-link");

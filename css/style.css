@@ -52,6 +52,12 @@ html.sr .title1 .description {
   position: relative;
   background-color: #90906f;
 }
+
+.seo-top {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
 /* <!-- Top page view content///////////////////////////////////////////////////////////// --> */
 .navbar {
   display: flex;
@@ -382,14 +388,6 @@ html.sr .title1 .description {
   display: flex;
 }
 
-.image img {
-  width: 400.408px;
-  height: 427.344px;
-  flex-shrink: 0;
-  border-radius: 34px;
-  display: block;
-  margin: 0 auto;
-}
 .image .design {
   color: rgba(255, 255, 255, 0.5);
   font-size: 26rem;
@@ -418,7 +416,15 @@ html.sr .title1 .description {
 .design3 {
   position: absolute;
   right: 5rem;
-  bottom: -1px;
+  bottom: -5px;
+}
+.image .design3 img {
+  width: 400.408px;
+  height: 427.344px;
+  flex-shrink: 0;
+  border-radius: 34px;
+  display: block;
+  margin: 0 auto;
 }
 
 .image .vector i {
@@ -761,7 +767,10 @@ html.sr .title1 .description {
   background: rgba(0, 0, 0, 0.863);
   opacity: 0.83;
   mix-blend-mode: multiply;
-  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+  transition:
+    background 0.3s,
+    border-radius 0.3s,
+    opacity 0.3s;
 }
 #skills-section #elementor-background-overlay {
   height: 100%;
@@ -1136,7 +1145,7 @@ html.sr .title1 .description {
   align-items: center;
   justify-content: center;
   gap: 50px;
-  padding: 3rem 10rem;
+  padding: 3rem 2rem;
 }
 .about-header {
   width: 60%;
@@ -1208,6 +1217,10 @@ html.sr .title1 .description {
 .my-web a:hover {
   color: var(--hover-color2);
   transition: color 0.3s;
+}
+.seo-name {
+  font-size: 12px;
+  opacity: 0.5;
 }
 /* -------------------footer animation---------------------------------------------------------------- */
 .animate-ball-footer {
@@ -1316,7 +1329,7 @@ html.sr .title1 .description {
     width: 360px;
     height: 400px;
   }
-  .image img {
+  .image .design3 img {
     width: 250.408px;
   }
   .image .design {
@@ -1385,6 +1398,7 @@ html.sr .title1 .description {
   .about-header {
     width: 100%;
   }
+ 
 }
 @media only screen and (max-width: 700px) {
   .container {
@@ -1397,7 +1411,7 @@ html.sr .title1 .description {
   .design3 {
     right: 2rem;
   }
-  .image img {
+  .image .design3 img {
     width: 270.408px;
     height: 345px;
   }
@@ -1461,7 +1475,7 @@ html.sr .title1 .description {
   .design3 {
     right: 2rem;
   }
-  .image img {
+  .image .design3 img {
     width: 270.408px;
     height: 345px;
   }
@@ -1483,7 +1497,7 @@ html.sr .title1 .description {
   .design3 {
     right: 2rem;
   }
-  .image img {
+  .image .design3 img {
     width: 270.408px;
     height: 345px;
   }
