@@ -1,5 +1,7 @@
 // const basePath = "/"; // Adjust if hosted under a subpath, e.g., "/gc-myportfolio.in/"
-const basePath = "/" || "/gc-myportfolio.in/";
+const repoName = "gc-myportfolio.in"; // your repo folder
+const isGitHub = location.hostname.includes("github.io");
+const basePath = isGitHub ? `/${repoName}/` : "/";
 
 // Select DOM elements
 const homeLinks = document.querySelectorAll(".home-link");
@@ -53,11 +55,17 @@ homeLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     closeMenu();
-    if (window.location.pathname.includes("portfolio.html")) {
-      window.location.href = basePath;
-    } else {
-      history.pushState(null, "", basePath);
+
+    const isHome =
+      window.location.pathname.endsWith("/") ||
+      window.location.pathname.endsWith("/index.html");
+
+    if (isHome) {
+      // Already on homepage → scroll to top
       document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Redirect to homepage
+      window.location.href = basePath;
     }
   });
 });
@@ -66,24 +74,34 @@ homeLinks.forEach((link) => {
 targetLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
-    // const target = e.currentTarget.dataset.target;
-    const target = link.getAttribute("data-target");
+    const target = link.dataset.target;
+    const section = document.getElementById(target);
 
-    if (target) {
-      const section = document.getElementById(target);
-
-      if (section) {
-        history.pushState(null, "", `${basePath}#${target}`);
-        section.scrollIntoView({ behavior: "smooth" });
-      } else {
-        console.warn(`Section with ID ${target} not found.`);
-        window.location.href = `${basePath}#${target}`;
-      }
+    if (section) {
+      // Section exists on this page → smooth scroll
+      section.scrollIntoView({ behavior: "smooth" });
+      history.pushState(null, "", `#${target}`);
+    } else {
+      // Section not on this page → go to homepage with hash
+      window.location.href = `${basePath}#${target}`;
     }
+
     closeMenu();
   });
 });
-
+// Optional: Auto-scroll to hash on page load
+window.addEventListener("load", () => {
+  const hash = window.location.hash.substring(1);
+  if (hash) {
+    const section = document.getElementById(hash);
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+  }
+});
+// target portfolio.html link
+document.querySelectorAll("[data-page]").forEach((link) => {
+  const page = link.dataset.page;
+  link.href = `${basePath}${page}`;
+});
 // Menubar toggle for mobile devices
 menuBar.addEventListener("click", openMenu);
 menuBarClose.addEventListener("click", closeMenu);
