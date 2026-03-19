@@ -61,10 +61,13 @@ homeLinks.forEach((link) => {
       window.location.pathname.endsWith("/index.html");
 
     if (isHome) {
-      // Already on homepage → scroll to top
+      // Scroll to top
       document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+
+      // 🔥 Remove hash from URL (THIS FIXES YOUR ISSUE)
+      history.replaceState(null, "", basePath);
     } else {
-      // Redirect to homepage
+      // Redirect if on another page
       window.location.href = basePath;
     }
   });
