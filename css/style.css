@@ -1145,7 +1145,7 @@ html.sr .title1 .description {
   align-items: center;
   justify-content: center;
   gap: 50px;
-  padding: 3rem 2rem;
+  padding: 3rem 10rem;
 }
 .about-header {
   width: 60%;
@@ -1398,7 +1398,6 @@ html.sr .title1 .description {
   .about-header {
     width: 100%;
   }
- 
 }
 @media only screen and (max-width: 700px) {
   .container {

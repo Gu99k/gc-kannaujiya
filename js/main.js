@@ -1,5 +1,5 @@
-const basePath = "/"; // Adjust if hosted under a subpath, e.g., "/gc-myportfolio.in/"
-// const basePath = "/gc-myportfolio.in/";
+// const basePath = "/"; // Adjust if hosted under a subpath, e.g., "/gc-myportfolio.in/"
+const basePath = "/" || "/gc-myportfolio.in/";
 
 // Select DOM elements
 const homeLinks = document.querySelectorAll(".home-link");
@@ -107,7 +107,7 @@ for (let i = 0; i < activeLink.length; i++) {
     if (current.length > 0) {
       current[0].className = current[0].className.replaceAll(
         " active-current",
-        ""
+        "",
       );
     } else {
       this.className += " active-current";
