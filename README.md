@@ -3,7 +3,7 @@
 A responsive portfolio website showcasing my projects, skills, and experience.
 
 ## 🚀 Live Demo
-👉 https://gu99k.github.io/gc-myportfolio.in/
+👉 https://gu99k.github.io/gc-kannaujiya/
 
 ## 🛠️ Built With
 - HTML5
