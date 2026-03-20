@@ -64,7 +64,7 @@ homeLinks.forEach((link) => {
       // Scroll to top
       document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
 
-      // 🔥 Remove hash from URL (THIS FIXES YOUR ISSUE)
+      //  Remove hash from URL
       history.replaceState(null, "", basePath);
     } else {
       // Redirect if on another page
