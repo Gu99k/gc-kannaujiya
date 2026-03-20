@@ -1,5 +1,5 @@
 // const basePath = "/"; // Adjust if hosted under a subpath, e.g., "/gc-myportfolio.in/"
-const repoName = "gc-myportfolio.in"; // your repo folder
+const repoName = "gc-kannaujiya"; // your repo folder
 const isGitHub = location.hostname.includes("github.io");
 const basePath = isGitHub ? `/${repoName}/` : "/";
 
